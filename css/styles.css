@@ -39,19 +39,33 @@ header {
 
 .main-nav {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end; /* Align nav items to bottom */
     background-color: white;
-    padding: 15px 20px;
+    padding: 10px 15px;
     margin: 0 auto;
     border-bottom: 1px solid #e0e0e0;
-    gap: 15px;
+    gap: 10px;
 }
 
 .nav-center {
     display: flex;
-    align-items: center;
-    order: -1; /* Logo first on mobile */
+    align-items: flex-end;
+    order: 0;
+}
+
+.nav-left,
+.nav-right {
+    flex: 1;
+}
+
+.nav-left {
+    justify-content: flex-start;
+}
+
+.nav-right {
+    justify-content: flex-end;
 }
 
 .nav-center .logo img {
@@ -62,27 +76,28 @@ header {
 .nav-left,
 .nav-right {
     display: flex;
-    align-items: center;
-    gap: 20px;
+    align-items: flex-end; /* Align buttons to bottom */
+    gap: 15px;
 }
 
-/* Make "Over Ons" smaller on mobile/tablet */
-.nav-right a {
-    font-size: 14px;
-    padding: 6px 12px;
-}
-
+/* Smaller buttons on mobile */
 .nav-left a,
 .nav-right a {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--text-secondary);
     text-decoration: none;
-    padding: 8px 16px;
+    padding: 5px 10px;
     position: relative;
     transition: all 0.3s ease;
     border-radius: 4px;
+}
+
+/* Make "Over Ons" slightly smaller than "Winkel" */
+.nav-right a {
+    font-size: 12px;
+    padding: 4px 8px;
 }
 
 /* Shop button specific styles */
@@ -122,14 +137,8 @@ header {
 /* Tablet breakpoint */
 @media (min-width: 768px) {
     .main-nav {
-        flex-direction: row;
-        justify-content: space-between;
         padding: 15px 30px;
         gap: 20px;
-    }
-    
-    .nav-center {
-        order: 0;
     }
     
     /* Keep "Over Ons" smaller than "Winkel" on tablet */
@@ -140,19 +149,6 @@ header {
     
     .nav-center .logo img {
         height: 80px;
-    }
-    
-    .nav-left,
-    .nav-right {
-        flex: 1;
-    }
-    
-    .nav-left {
-        justify-content: flex-start;
-    }
-    
-    .nav-right {
-        justify-content: flex-end;
     }
 }
 
