@@ -270,7 +270,7 @@ header {
     
     .hero-content {
         padding: 30px;
-        max-width: 340px;
+        max-width: 380px;
         max-height: 270px; /* Ensure text box doesn't expand beyond hero image */
         line-height: 1.5;
         font-size: 15px;

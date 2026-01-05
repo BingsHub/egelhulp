@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedankt! - Egelhulp</title>
+    <style>
+        .success-container {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .success-container h1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 32px;
+            color: var(--brand-green);
+            margin-bottom: 20px;
+        }
+
+        .success-container p {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .success-message {
+            background-color: rgba(0, 128, 0, 0.1);
+            border: 1px solid rgba(0, 128, 0, 0.3);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .back-to-shop-btn {
+            display: inline-block;
+            background-color: var(--brand-green);
+            color: white;
+            text-decoration: none;
+            padding: 14px 30px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .back-to-shop-btn:hover {
+            background-color: #003d00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="nav-left">
+                <a href="winkel.html" class="shop-button">Winkel</a>
+            </div>
+            <div class="nav-center">
+                <a href="index.html" class="logo">
+                    <img src="images/egelhulp_logo_cropped_1.svg" alt="egelhulp logo">
+                </a>
+            </div>
+            <div class="nav-right">
+                <a href="over.html">Over Ons</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="success-container">
+            <h1>Bedankt voor je bestelling!</h1>
+
+            <div class="success-message">
+                <p><strong>Je betaling is succesvol verwerkt.</strong></p>
+                <p>Je ontvangt binnenkort een bevestigingsmail met de details van je bestelling.</p>
+            </div>
+            <a href="winkel.html" class="back-to-shop-btn">Terug naar de winkel</a>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/footer.js"></script>
+</body>
+
+</html>

@@ -49,14 +49,30 @@ function renderProductDetail() {
   }
 }
 
-// Add to cart functionality (placeholder)
+// Stripe Payment Links for each product (test mode)
+const paymentLinks = {
+  1001: 'https://buy.stripe.com/test_cNicN51YPdGHdJ6bbI0Ba00', // Egelhulp Totebag
+  1002: 'https://buy.stripe.com/test_fZu5kD32T46734s5Ro0Ba03', // Verjaardagskaart
+  1003: 'https://buy.stripe.com/test_dRm4gz6f56ef48wenU0Ba02', // Egelhanger
+  1004: 'https://buy.stripe.com/test_00w6oHeLBbyz34sfrY0Ba01', // Inheemse Bloemzaden
+};
+
+// Add to cart - redirects to Stripe Checkout
 document.addEventListener('DOMContentLoaded', function() {
   renderProductDetail();
 
   const addToCartBtn = document.querySelector('.add-to-cart-btn');
   if (addToCartBtn) {
     addToCartBtn.addEventListener('click', function() {
-      alert('Product toegevoegd aan winkelwagen! (Deze functie wordt binnenkort geïmplementeerd)');
+      const productId = getProductIdFromURL();
+      const paymentLink = paymentLinks[productId];
+      
+      if (paymentLink) {
+        // Redirect to Stripe Checkout
+        window.location.href = paymentLink;
+      } else {
+        alert('Dit product is nog niet beschikbaar voor aankoop. Probeer het later opnieuw.');
+      }
     });
   }
 });
