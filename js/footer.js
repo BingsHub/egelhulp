@@ -15,9 +15,7 @@ const footerHTML = `
 
             <div class="footer-section">
                 <h4>Info</h4>
-                <a href="over.html#over-egelhulp">Over Egelhulp</a>
-                <a href="over.html#wie-wij-zijn">Wie Wij Zijn</a>
-                <a href="over.html#hulp-voor-egels">Hulp voor Egels</a>
+                <a href="index.html#over-ons">Over Egelhulp</a>
             </div>
         </div>
 

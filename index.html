@@ -1,52 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="images/egelhulp-favicon.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Egelhulp</title>
+    <meta name="description"
+        content="Egelhulp zet zich in voor de bescherming van egels in Nederland. Ontdek onze producten en steun ons goede doel.">
+    <title>Egelhulp - Help een Egel</title>
+    <script src="js/auth.js"></script>
 </head>
 
 <body>
     <header>
         <nav class="main-nav">
             <div class="nav-left">
-                <a href="winkel.html" class="shop-button">Winkel</a>
+                <a href="#producten" class="shop-button">Producten</a>
             </div>
             <div class="nav-center">
-                <a href="index.html" class="logo">
+                <a href="#" class="logo">
                     <img src="images/egelhulp_logo_cropped_1.svg" alt="egelhulp logo">
                 </a>
             </div>
             <div class="nav-right">
-                <a href="over.html">Over Ons</a>
+                <a href="#over-ons" class="outline-button">Over Ons</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <video class="hero-clip" autoplay muted loop>
-                <source src="images/egelhulp_hero_clip_cropped.mp4" type="video/mp4">
-            </video>
+        <section class="donation-progress-section">
+            <div class="donation-progress">
+                <div class="progress-row">
+                    <div class="progress-label-group">
+                        <span class="progress-label">Volgende donatie</span>
+                        <span class="info-tooltip">
+                            <span class="info-icon">i</span>
+                            <span class="tooltip-text">Elke 100 euro die we ophalen wordt gedoneerd aan organisaties die
+                                zicht inzetten voor egels.</span>
+                        </span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill" style="width: 65%;"></div>
+                    </div>
+                    <span class="progress-percentage" id="progress-percentage">65%</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="missie" class="hero">
             <div class="hero-content">
+                <h1>Help een Egel</h1>
                 <p>Egels krijgen in Nederland steeds meer te maken met bedreigingen, zoals minder groen en gevaarlijk
-                    verkeer. Egelhulp zet zich in om bewustwording te vergroten en zamelt geld in voor de bescherming
+                    verkeer.</p>
+                <p>Egelhulp zet zich in om bewustwording te vergroten en zamelt geld in voor de bescherming
                     van egels.</p>
-                <p>Help je mee? Neem een kijkje in onze <a href="winkel.html" class="hero-shop-ref">winkel!</a></p>
+                <a href="#producten" class="hero-cta">Bekijk onze spulletjes</a>
+            </div>
+            <img class="hero-image" src="images/hedgehog-collage-generated.png" alt="Hedgehog collage">
+        </section>
+
+        <section id="producten" class="product-preview">
+            <div class="product-grid">
+                <!-- Products dynamically loaded by script.js -->
+            </div>
+        </section>
+
+        <section id="over-ons" class="about-section">
+            <div class="about-layout">
+                <div class="about-photo">
+                    <!-- Replace src with your photo -->
+                    <img src="images/placeholder-photo.jpg" alt="Over Egelhulp">
+                </div>
+                <div class="about-text">
+                    <h2>Over Egelhulp</h2>
+                    <p>Egelhulp is een initiatief dat zich inzet voor het welzijn van egels in Nederland. Wij geloven
+                        dat iedereen kan bijdragen aan een betere leefomgeving voor deze bijzondere dieren.</p>
+                    <p>De opbrengst van onze producten gaat naar lokale egelopvangcentra en bewustwordingscampagnes.
+                        Samen kunnen we het verschil maken voor de egelpopulatie in Nederland.</p>
+                </div>
             </div>
         </section>
     </main>
-
-    <section class="product-preview">
-        <div class="product-preview-header">
-            <a href="winkel.html" class="view-all-products-button">Alle Producten</a>
-        </div>
-        <div class="product-grid">
-            <!-- Products dynamically loaded by script.js -->
-        </div>
-    </section>
 
     <div id="footer-placeholder"></div>
     <script src="js/footer.js"></script>

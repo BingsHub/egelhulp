@@ -14,7 +14,7 @@ function renderProductDetail() {
   const productId = getProductIdFromURL();
   
   if (!productId) {
-    window.location.href = 'winkel.html';
+    window.location.href = 'index.html#producten';
     return;
   }
 
@@ -22,7 +22,7 @@ function renderProductDetail() {
   
   if (!product) {
     alert('Product niet gevonden!');
-    window.location.href = 'winkel.html';
+    window.location.href = 'index.html#producten';
     return;
   }
 

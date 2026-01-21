@@ -1,7 +1,7 @@
 const products = [
   {
     id: 1001,
-    name: "Egelhulp Totebag",
+    name: "Egelhulp 'Logo' Totebag",
     price: "14,85",
     image: "images/egelhulp-logo-tote.png",
     alt: "Egelhulp Logo Tote Bag",
@@ -22,10 +22,38 @@ const products = [
   },
   {
     id: 1004,
-    name: "Inheemse Bloemzaden",
+    name: "Vergeten Bloemzaden",
     price: "12,85",
     image: "images/native-flower-seeds.png",
     alt: "Native Flower Seeds",
+  },
+  {
+    id: 1005,
+    name: "Egelhulp 'Egel' Totebag",
+    price: "16,85",
+    image: "images/egelhulp-egel-tote.png",
+    alt: "Egelhulp Egel Tote Bag",
+  },
+  {
+    id: 1006,
+    name: "Egelbrokjes 1kg",
+    price: "9,85",
+    image: "images/egelhulp-egelbrokjes.png",
+    alt: "Egelbrokjes Egelvoer",
+  },
+  {
+    id: 1007,
+    name: "Egelkalender 2026",
+    price: "11,85",
+    image: "images/egelhulp-egelkalender.png",
+    alt: "Egelhulp Egelkalender",
+  },
+  {
+    id: 1008,
+    name: "Kinderboekje Egelsteen",
+    price: "7,85",
+    image: "images/egelhulp-egelsteen-kinderboekje.png",
+    alt: "Het Egelsteen Kinderboekje",
   },
 ];
 
