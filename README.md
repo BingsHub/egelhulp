@@ -8,3 +8,4 @@ Currently, the site features AI-generated mockup products and branding. The goal
 
 Domain: [egelhulp.nl](https://egelhulp.nl)  
 Deployed (bare bones) - January 3, 2026
+Deployed (password protected) - January 21, 2026
