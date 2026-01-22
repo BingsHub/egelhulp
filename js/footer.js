@@ -20,7 +20,7 @@ const footerHTML = `
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Egelhulp. Alle rechten voorbehouden.</p>
+            <p>&copy; ${new Date().getFullYear()} Egelhulp. Alle rechten voorbehouden.</p>
         </div>
     </footer>
 `;
