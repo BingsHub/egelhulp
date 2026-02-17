@@ -1,65 +1,57 @@
 // Simple password protection for preview site
-const SITE_PASSWORD = "egelhulp"; // Change this to your desired password
+const SITE_PASSWORD = "egelhulp";
 const AUTH_KEY = "egelhulp_authenticated";
 
 function createAuthModal() {
-    // Check if already authenticated in this session
     if (sessionStorage.getItem(AUTH_KEY) === "true") {
         return;
     }
 
-    // Create modal HTML
     const modalHTML = `
-        <div id="auth-overlay" class="auth-overlay">
-            <div class="auth-modal">
-                <div class="auth-logo">
-                    <img src="images/egelhulp_logo_cropped_1.svg" alt="Egelhulp Logo">
+        <div id="auth-overlay" class="fixed inset-0 w-full h-full bg-[rgba(26,20,17,0.85)] backdrop-blur-[8px] flex items-center justify-center z-[10000] opacity-100 transition-opacity duration-300">
+            <div class="auth-modal bg-cream px-10 py-6 rounded-[50px] text-center shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
+                <div class="mb-3">
+                    <img src="images/egelhulp_logo_cropped_1.svg" alt="Egelhulp Logo" class="h-[55px]">
                 </div>
-                <form id="auth-form" class="auth-form">
-                    <input 
-                        type="password" 
-                        id="auth-password" 
+                <form id="auth-form" class="flex flex-col gap-2">
+                    <input
+                        type="password"
+                        id="auth-password"
                         placeholder="Wachtwoord"
                         autocomplete="off"
                         autofocus
+                        class="font-serif text-sm px-5 py-2.5 border-[1.5px] border-border-medium rounded-[25px] bg-white text-[#1A1411] text-center transition-colors w-[180px] focus:outline-none focus:border-orange placeholder:text-gray-400"
                     >
-                    <p id="auth-error" class="auth-error"></p>
+                    <p id="auth-error" class="text-red-700 text-[13px] m-0 min-h-[18px]"></p>
                 </form>
             </div>
         </div>
     `;
 
-    // Insert modal at the start of body
     document.body.insertAdjacentHTML('afterbegin', modalHTML);
-
-    // Prevent scrolling when modal is open
     document.body.style.overflow = 'hidden';
 
-    // Handle form submission
     const form = document.getElementById('auth-form');
     const passwordInput = document.getElementById('auth-password');
     const errorMsg = document.getElementById('auth-error');
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+
         if (passwordInput.value === SITE_PASSWORD) {
-            // Success - store in session and remove modal
             sessionStorage.setItem(AUTH_KEY, "true");
             const overlay = document.getElementById('auth-overlay');
-            overlay.classList.add('auth-fade-out');
-            
+            overlay.classList.add('opacity-0');
+
             setTimeout(() => {
                 overlay.remove();
                 document.body.style.overflow = '';
             }, 300);
         } else {
-            // Wrong password
             errorMsg.textContent = 'Onjuist wachtwoord';
             passwordInput.value = '';
             passwordInput.focus();
-            
-            // Shake animation
+
             const modal = document.querySelector('.auth-modal');
             modal.classList.add('auth-shake');
             setTimeout(() => modal.classList.remove('auth-shake'), 500);
@@ -67,5 +59,4 @@ function createAuthModal() {
     });
 }
 
-// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', createAuthModal);

@@ -1,35 +1,79 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" class="scroll-smooth">
 
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/egelhulp-favicon.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Egelhulp zet zich in voor de bescherming van egels in Nederland. Ontdek onze producten en steun ons goede doel.">
     <title>Egelhulp - Help een Egel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orange: { DEFAULT: '#B8500B', light: '#C65F1A', dark: '#A54609' },
+                        cream: '#FAF8F5',
+                        brown: { DEFAULT: '#5D4037', light: '#6D4C41', dark: '#4E342E' },
+                        'border-light': '#E8E0D8',
+                        'border-medium': '#D7CCC8',
+                        'bg-footer': '#F5F0EB',
+                    },
+                    fontFamily: {
+                        serif: ['Fraunces', 'Georgia', 'Times New Roman', 'serif'],
+                        sans: ['Nunito', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        @keyframes authShake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+        .auth-shake { animation: authShake 0.5s ease; }
+        ::selection { background-color: #B8500B; color: #FAF8F5; }
+        /* Anchor offset for sticky header */
+        #producten, #missie, #over-ons { scroll-margin-top: 160px; }
+    </style>
     <script src="js/auth.js"></script>
 </head>
 
-<body>
-    <header>
-        <nav class="main-nav">
-            <div class="nav-left">
-                <a href="#producten" class="outline-button">Spulletjes</a>
+<body class="m-0 p-0 bg-cream font-serif text-[#1A1411] leading-relaxed overflow-x-hidden">
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-cream">
+        <nav class="flex flex-row justify-between items-end bg-cream px-4 py-3 mx-auto border-b border-border-light gap-2.5
+                    md:px-[30px] md:py-4 md:gap-5
+                    lg:max-w-[1100px] lg:px-10 lg:py-5 lg:gap-20 lg:justify-center">
+            <div class="flex items-end gap-4 flex-1 justify-end lg:flex-none lg:gap-10">
+                <a href="#producten"
+                   class="font-sans text-sm font-medium text-orange border border-orange rounded-sm px-3 py-1.5 text-center min-w-[90px] transition-all hover:bg-orange hover:text-cream
+                          md:text-[15px] md:px-3.5 md:py-[7px]
+                          lg:text-[17px] lg:px-[18px] lg:py-2.5 lg:whitespace-nowrap lg:min-w-[110px]">Spulletjes</a>
             </div>
-            <div class="nav-center">
+            <div class="flex items-end order-first lg:order-none">
                 <a href="#" class="logo">
-                    <img src="images/egelhulp_logo_cropped_1.svg" alt="egelhulp logo">
+                    <img src="images/egelhulp_logo_cropped_1.svg" alt="egelhulp logo"
+                         class="h-[65px] w-auto md:h-20 lg:h-[95px]">
                 </a>
             </div>
-            <div class="nav-right">
-                <a href="#over-ons" class="outline-button">Wie</a>
-                <a href="#producten" class="nav-basket" aria-label="Naar winkel">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <div class="flex items-end gap-4 flex-1 justify-start lg:flex-none lg:gap-10">
+                <a href="#over-ons"
+                   class="font-sans text-sm font-medium text-orange border border-orange rounded-sm px-3 py-1.5 text-center min-w-[90px] transition-all hover:bg-orange hover:text-cream
+                          md:text-[15px] md:px-3.5 md:py-[7px]
+                          lg:text-[17px] lg:px-[18px] lg:py-2.5 lg:whitespace-nowrap lg:min-w-[110px]">Wie</a>
+                <a href="#producten" aria-label="Naar winkel"
+                   class="flex items-end justify-center text-orange p-0 ml-auto border-none bg-none transition-all hover:text-orange-dark hover:scale-110">
+                    <svg class="block mb-0.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
                         <path d="M16 10a4 4 0 0 1-8 0"></path>
@@ -40,58 +84,106 @@
     </header>
 
     <main>
-        <section class="donation-progress-section">
-            <div class="donation-progress">
-                <div class="progress-row">
-                    <div class="progress-label-group">
-                        <span class="progress-label">Volgende donatie</span>
-                        <span class="info-tooltip">
-                            <span class="info-icon">i</span>
-                            <span class="tooltip-text">Elke 100 euro die we ophalen wordt gedoneerd aan organisaties die
-                                zicht inzetten voor egels.</span>
+        <!-- Donation Progress -->
+        <section class="my-4 mx-auto px-4 max-w-[1100px] md:px-[30px] lg:px-10">
+            <div class="w-full">
+                <div class="flex items-center gap-4 px-6 py-2 border border-border-light rounded-full">
+                    <div class="flex items-center gap-2 shrink-0">
+                        <span class="font-serif text-xs font-medium text-brown uppercase tracking-wide whitespace-nowrap md:text-[13px]">Volgende donatie</span>
+                        <span class="relative inline-flex items-center cursor-help group">
+                            <span class="inline-flex items-center justify-center w-4 h-4 font-serif text-[10px] font-bold italic text-brown border-[1.5px] border-border-medium rounded-full transition-all group-hover:text-orange group-hover:border-orange">i</span>
+                            <span class="absolute left-1/2 bottom-[calc(100%+8px)] -translate-x-1/2 px-3.5 py-2.5 bg-[#1A1411] text-cream font-serif text-xs font-normal leading-normal max-w-[calc(100vw-40px)] w-max rounded-sm opacity-0 invisible transition-all z-50 group-hover:opacity-100 group-hover:visible md:w-[280px]
+                                         after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-[6px] after:border-transparent after:border-t-[#1A1411]">Elke 100 euro die we ophalen wordt gedoneerd aan organisaties die zich inzetten voor egels.</span>
                         </span>
                     </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progress-fill" style="width: 65%;"></div>
+                    <div class="flex-1 h-2 bg-border-light rounded overflow-hidden min-w-[80px]">
+                        <div id="progress-fill" class="h-full bg-gradient-to-r from-orange to-orange-light rounded transition-all duration-500" style="width: 65%;"></div>
                     </div>
-                    <span class="progress-percentage" id="progress-percentage">65%</span>
+                    <span id="progress-percentage" class="font-serif text-sm font-bold text-orange shrink-0">65%</span>
                 </div>
             </div>
         </section>
 
-        <section id="missie" class="hero">
-            <div class="hero-content">
-                <h1>Help een Egel</h1>
-                <p>De opbrengst van onze spulletjes komt ten goede aan de leuke egels van Nederland.</p>
-                <a href="#producten" class="hero-cta">De Spulletjes</a>
+        <!-- Hero -->
+        <section id="missie" class="flex flex-col gap-4 my-3 mx-auto px-3 max-w-[1100px]
+                                    md:flex-row md:items-center md:gap-10 md:px-5 md:min-h-[320px]
+                                    lg:gap-[60px] lg:min-h-[450px]">
+            <div class="text-left font-serif px-2
+                        md:flex-[0_0_40%] md:px-0
+                        lg:flex-[0_0_35%]">
+                <h1 class="mt-0 mb-6 text-[34px] font-semibold leading-tight md:text-[28px] lg:text-4xl">Help een Egel</h1>
+                <p class="text-[17px] text-[#2D2320] font-normal mb-6 lg:text-[19px]">De opbrengst van onze spulletjes komt ten goede aan de leuke egels van Nederland.</p>
+                <a href="#producten"
+                   class="inline-block mt-4 px-7 py-3.5 bg-orange text-cream font-sans text-base font-semibold no-underline rounded-[10px] border-none transition-all hover:bg-orange-light">De Spulletjes</a>
             </div>
-            <img class="hero-image" src="images/hedgehog-collage-generated.png" alt="Hedgehog collage">
+            <img class="w-full h-[280px] object-cover object-center rounded-md -order-1
+                        md:flex-1 md:h-[320px] md:min-w-0 md:order-1
+                        lg:h-[450px]"
+                 src="images/hedgehog-collage-generated.png" alt="Hedgehog collage">
         </section>
 
-        <section id="producten" class="product-preview">
-            <div class="product-grid">
+        <!-- Products -->
+        <section id="producten" class="mx-auto my-10 mb-6 px-4 scroll-mt-[100px] md:px-5 lg:max-w-[1100px] lg:px-5">
+            <div class="product-grid grid grid-cols-2 gap-6 max-w-[1100px] mx-auto lg:grid-cols-4 lg:gap-10">
                 <!-- Products dynamically loaded by script.js -->
             </div>
         </section>
 
-        <section id="over-ons" class="about-section">
-            <div class="about-layout">
-                <div class="about-photo">
-                    <!-- Replace src with your photo -->
-                    <img src="images/placeholder-photo.jpg" alt="Over Egelhulp">
+        <!-- About -->
+        <section id="over-ons" class="mx-auto my-6 mb-10 pt-10 px-5 max-w-[1100px] scroll-mt-[120px]
+                                      md:pt-10 md:px-10 md:mt-10
+                                      lg:my-[60px]">
+            <div class="flex flex-col gap-10 items-center
+                        md:flex-row md:items-center md:gap-10
+                        lg:gap-[60px]">
+                <div class="flex justify-center shrink-0 lg:flex-[0_0_250px]">
+                    <img src="images/placeholder-photo.jpg" alt="Over Egelhulp"
+                         class="w-[200px] h-[200px] object-cover rounded-full bg-border-light
+                                md:w-[220px] md:h-[220px] md:rounded-md
+                                lg:w-[250px] lg:h-[250px]">
                 </div>
-                <div class="about-text">
-                    <h2>Wij</h2>
-                    <p>Hoi, mijn naam is Bing en ik ben Egelhulp. Het is op het moment nog een eenmansding. Ik hoop met dit project een klein verschil te kunnen maken voor het behoud van de egels in Nederland.</p>
-                    <p>De opbrengst van de verkoop van de spulletjes wordt gedoneerd aan organisaties die zich inzetten voor egels. 
-                        Als je liever direct wil doneren kijk dan <a href="https://www.egelhelp.nl/doneren">hier</a>.</p>
+                <div class="text-center md:flex-1 md:text-left">
+                    <h2 class="font-serif text-2xl font-bold text-[#1A1411] mt-0 mb-6 md:text-[28px] lg:text-[32px] lg:mb-10">Wij</h2>
+                    <p class="font-serif text-[15px] leading-[1.75] text-[#2D2320] mb-4 md:text-base lg:text-[17px]">Hoi, mijn naam is Bing en ik ben Egelhulp. Het is op het moment nog een eenmansding. Ik hoop met dit project een klein verschil te kunnen maken voor het behoud van de egels in Nederland.</p>
+                    <p class="font-serif text-[15px] leading-[1.75] text-[#2D2320] mb-0 md:text-base lg:text-[17px]">De opbrengst van de verkoop van de spulletjes wordt gedoneerd aan organisaties die zich inzetten voor egels.
+                        Als je liever direct wil doneren kijk dan <a href="#" id="donate-link" class="text-orange font-semibold underline underline-offset-2 transition-colors hover:text-orange-dark">hier</a>.</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <div id="footer-placeholder"></div>
-    <script src="js/footer.js"></script>
+    <!-- Footer -->
+    <footer class="bg-bg-footer pt-10 pb-4 mt-[60px] border-t border-border-medium
+                   md:pt-10 md:pb-4 md:mt-[60px]
+                   lg:pt-10 lg:pb-6 lg:mt-[60px]">
+        <div class="max-w-[1100px] mx-auto px-4 grid grid-cols-1 gap-6
+                    md:grid-cols-2 md:gap-10 md:px-5
+                    lg:grid-cols-3 lg:gap-10">
+            <div class="font-serif">
+                <h4 class="text-[#1A1411] font-semibold text-base mt-0 mb-2 lg:text-[17px]">Contact</h4>
+                <p class="text-[#2D2320] mb-2 text-sm lg:text-[15px]">info@egelhulp.nl</p>
+                <a href="https://instagram.com/egelhulp" target="_blank"
+                   class="font-serif text-[#2D2320] no-underline block mb-2 text-sm transition-colors hover:text-orange lg:text-[15px]">@egelhulp</a>
+            </div>
+            <div class="font-serif">
+                <h4 class="text-[#1A1411] font-semibold text-base mt-0 mb-2 lg:text-[17px]">Egelhulp</h4>
+                <p class="text-[#2D2320] mb-2 text-sm lg:text-[15px]">Hulp voor egels in Nederland</p>
+            </div>
+            <div class="font-serif">
+                <h4 class="text-[#1A1411] font-semibold text-base mt-0 mb-2 lg:text-[17px]">Info</h4>
+                <a href="#over-ons"
+                   class="font-serif text-[#2D2320] no-underline block mb-2 text-sm transition-colors hover:text-orange lg:text-[15px]">Over Egelhulp</a>
+            </div>
+        </div>
+        <div class="text-center mt-6 py-4 border-t border-border-light font-serif text-[13px] text-brown max-w-[1100px] mx-auto
+                    lg:mt-10 lg:py-6 lg:text-sm">
+            <p class="m-0" id="footer-year"></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('footer-year').innerHTML = `&copy; ${new Date().getFullYear()} Egelhulp. Alle rechten voorbehouden.`;
+    </script>
     <script src="js/script.js"></script>
 </body>
 
