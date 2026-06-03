@@ -11,7 +11,7 @@ function createAuthModal() {
         <div id="auth-overlay" class="fixed inset-0 w-full h-full bg-[rgba(26,20,17,0.85)] backdrop-blur-[8px] flex items-center justify-center z-[10000] opacity-100 transition-opacity duration-300">
             <div class="auth-modal bg-cream px-10 py-6 rounded-[50px] text-center shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
                 <div class="mb-3">
-                    <img src="images/egelhulp_logo_cropped_1.svg" alt="Egelhulp Logo" class="h-[55px]">
+                    <img src="images/egelhulp-favicon.svg" alt="Egelhulp Logo" class="h-[55px] mix-blend-multiply">
                 </div>
                 <form id="auth-form" class="flex flex-col gap-2">
                     <input
