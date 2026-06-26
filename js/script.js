@@ -433,15 +433,3 @@ if (cartBtn) {
   });
 }
 
-// ========================================
-// Shrink logo on scroll
-// ========================================
-
-const navLogo = document.querySelector('.logo img');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navLogo.classList.add('scrolled');
-  } else {
-    navLogo.classList.remove('scrolled');
-  }
-}, { passive: true });

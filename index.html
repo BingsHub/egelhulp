@@ -42,10 +42,6 @@
         .auth-shake { animation: authShake 0.5s ease; }
         ::selection { background-color: #B8500B; color: #FAF8F5; }
         #producten, #missie, #over-ons { scroll-margin-top: 100px; }
-        .logo img { transition: height 0.3s ease; }
-        .logo img.scrolled { height: 3.5rem; }
-        @media (min-width: 768px) { .logo img.scrolled { height: 4rem; } }
-        @media (min-width: 1024px) { .logo img.scrolled { height: 4.5rem; } }
     </style>
     <script src="js/auth.js" defer></script>
 </head>
@@ -66,7 +62,7 @@
             <div class="flex items-end order-first lg:order-none">
                 <a href="#" class="logo">
                     <img src="images/egelhulp-favicon.svg" alt="egelhulp logo"
-                         class="h-20 w-auto md:h-24 lg:h-28 mix-blend-multiply">
+                         class="h-14 w-auto md:h-16 lg:h-[4.5rem] mix-blend-multiply">
                 </a>
             </div>
             <div class="flex items-end gap-6 flex-1 justify-end pb-3 lg:flex-none lg:gap-10 lg:pb-4">
